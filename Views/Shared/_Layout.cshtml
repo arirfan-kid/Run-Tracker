@@ -1,0 +1,189 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - SampleCrudApp</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        @@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@700&display=swap');
+        body {
+            font-family: 'poppins', sans-serif;
+            color: black;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background: #ebc999;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        }
+
+        .navbar {
+            font-size: 18px;
+        }
+
+        .navbar-brand {
+            font-size: 26px;
+            font-weight: bold;
+            color: #cd7700 !important;
+            transition: all 0.3s ease;
+        }
+
+        .navbar-brand:hover {
+            color: #cd7700 !important;
+            text-shadow: 0 0 10px #cd7700;
+        }
+
+        .navbar-nav .nav-link {
+            color: #cd7700 !important;
+            margin-left: 20px;
+            transition: color 0.3s ease, transform 0.2s ease;
+        }
+
+        .navbar-nav .nav-link:hover {
+            color: #e4e4e4 !important;
+            transform: scale(1.1);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: url('https://www.nomeatathlete.com/wp-content/uploads/2012/03/running-feature-image.png') no-repeat center center/cover;
+            height: 87vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            color: white;
+            text-shadow: 0px 4px 10px rgba(0, 0, 0, 0.7);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-family: 'Rubrik', sans-serif;
+            font-weight: bold; 
+            font-size: 3rem;
+            margin-bottom: 20px;
+            position: relative;
+            animation: glow 2s infinite alternate, mymove 5s forwards;
+            
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+        }
+
+        .hero .btn {
+            font-size: 1rem;
+            padding: 10px 20px;
+            background: #ebc999;
+            border: none;
+            color: #4d3227;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .hero .btn:hover {
+            background: #cd7700;
+            transform: scale(1.1);
+        }
+
+        @@keyframes glow {
+            0% {
+                text-shadow: 0 0 15px #cd7700, 0 0 30px #ebc999;
+            }
+            100% {
+                text-shadow: 0 0 15px #ff6600, 0 0 60px #ffcc99;
+            }                
+        }
+        @@keyframes mymove {
+            0%   {top: 0px;}
+            50%  {top: 300px}
+            100% {top: 0px;}
+        }   
+
+        /* Footer */
+        footer {
+            background: #ebc999;
+            color: #cd7700;
+            padding:10px 0;
+            text-align: center;
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+        }
+
+        footer a {
+            color: #00d9ff;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        footer a:hover {
+            color: #ff6bcb;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">SampleCrudApp</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-controller="RunTracker" asp-action="Index">Run Tracker</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="" asp-controller="RunTracker" asp-action="Chart">Chart</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    @if (ViewData["Title"]?.ToString() == "Home Page")
+    {
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Welcome to the Future of Tracking</h1>
+            <p>Your ultimate running companion, now redefined!</p>
+            <a href="@Url.Action("Index", "RunTracker")" class="btn">Explore Features</a>
+        </div>
+    </section>
+    }
+
+    <!-- Main Content -->
+    <div class="container">
+        @RenderBody()
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        &copy; 2025 SampleCrudApp - All rights reserved. <br>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+
+    @RenderSection("Scripts", required: false)
+</body>
+</html>
