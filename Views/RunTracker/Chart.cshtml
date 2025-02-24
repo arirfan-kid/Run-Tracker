@@ -5,206 +5,180 @@
 }
 
 <head>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron&family=Rubik:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
         body {
-            font-family: 'Rubik', sans-serif;
-            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-            color: #e4e4e4;
+            font-family: 'Poppins', sans-serif;
+            background: #0f172a;
+            color: #e5e7eb;
+            text-align: center;
         }
 
         .container {
-            max-width: 1200px;
+            max-width: 1000px;
             margin: 50px auto;
-            padding: 20px;
-            background-color: rgba(255, 255, 255, 0.1);
+            padding: 25px;
             border-radius: 15px;
-            box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.4);
+            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.05);
+            box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        h2 {
+            font-size: 28px;
+            font-weight: 600;
+            color: #facc15;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
         }
 
         .row {
             display: flex;
+            flex-wrap: wrap;
             justify-content: space-between;
+            gap: 20px;
         }
 
         .chart-container {
-            flex: 0 0 70%;
-            padding-right: 20px;
+            flex: 2;
+            min-width: 600px;
+            max-width: 800px;
+            height: 400px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 15px;
+            box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3);
         }
 
         .data-container {
-            flex: 0 0 25%;
-            background-color: rgba(255, 255, 255, 0.1);
+            flex: 1;
+            min-width: 250px;
             padding: 20px;
             border-radius: 15px;
-            box-shadow: 0px 8px 10px rgba(0, 0, 0, 0.4);
+            background: rgba(255, 255, 255, 0.1);
+            box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease-in-out;
         }
 
-        h2 {
-            color: #ebc999;
-            text-shadow: 0px 4px 10px rgba(0, 0, 0, 0.7);
-            margin-bottom: 30px;
-            text-align: center;
+        .data-container:hover {
+            transform: scale(1.05);
         }
 
         .data-list {
-            color: #ebc999;
             font-size: 18px;
+            font-weight: 500;
             margin-bottom: 10px;
+            padding: 12px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+            transition: background 0.3s ease-in-out;
         }
 
-        .legend {
-            margin-top: 30px;
+        .data-list:hover {
+            background: rgba(255, 255, 255, 0.2);
         }
 
-        .legend-item {
-            display: flex;
-            align-items: center;
-            margin-bottom: 10px;
-        }
-
-        .legend-color {
-            width: 20px;
-            height: 20px;
-            border-radius: 50%;
-            margin-right: 10px;
+        @@media (max-width: 768px) {
+            .row {
+                flex-direction: column;
+                align-items: center;
+            }
+            .chart-container, .data-container {
+                min-width: 100%;
+            }
         }
     </style>
 </head>
 
-<div class="container">
-    <h2>Run Distance Chart</h2>
+<body>
+    <div class="container">
+        <h2>Distance Chart for Past Runs</h2>
 
-    <div class="row">
-        <div class="chart-container">
-            <canvas id="distanceChart"></canvas>
-        </div>
+        <div class="row">
+            <div class="chart-container">
+                <canvas id="distanceChart"></canvas>
+            </div>
 
-        <div class="data-container">
-            <div class="data-list">
-                <strong>>=3km and <5km:</strong> <span id="total3to5km">0</span>
-            </div>
-            <div class="data-list">
-                <strong>>=5km and <10km:</strong> <span id="total5to10km">0</span>
-            </div>
-            <div class="data-list">
-                <strong>>=10km and <15km:</strong> <span id="total10to15km">0</span>
-            </div>
-            <div class="data-list">
-                <strong>>=15km and <21km:</strong> <span id="total15to21km">0</span>
-            </div>
-            <div class="data-list">
-                <strong>>=21km and <42km:</strong> <span id="total21to42km">0</span>
+            <div class="data-container">
+                <div class="data-list">🏃‍♂️ >=3km & <5km : <span id="total3to5km">0</span></div>
+                <div class="data-list">🔥 >=5km & <10km : <span id="total5to10km">0</span></div>
+                <div class="data-list">💪 >=10km & <15km : <span id="total10to15km">0</span></div>
+                <div class="data-list">⚡ >=15km & <21km : <span id="total15to21km">0</span></div>
+                <div class="data-list">🏅 >=21km & <42km : <span id="total21to42km">0</span></div>
             </div>
         </div>
     </div>
-</div>
 
-<script>
-    // Extracting the distances from the model
-    var distances = @Html.Raw(Json.Serialize(Model.Select(r => r.Distance).ToList()));
+    <script>
+        var distances = @Html.Raw(Json.Serialize(Model.Select(r => r.Distance).ToList()));
 
-    // Count the occurrences for each range
-    var count3to5km = distances.filter(d => d >= 3 && d < 5).length;
-    var count5to10km = distances.filter(d => d >= 5 && d < 10).length;
-    var count10to15km = distances.filter(d => d >= 10 && d < 15).length;
-    var count15to21km = distances.filter(d => d >= 15 && d < 21).length;
-    var count21to42km = distances.filter(d => d >= 21 && d < 42).length;
+        var count3to5km = distances.filter(d => d >= 3 && d < 5).length;
+        var count5to10km = distances.filter(d => d >= 5 && d < 10).length;
+        var count10to15km = distances.filter(d => d >= 10 && d < 15).length;
+        var count15to21km = distances.filter(d => d >= 15 && d < 21).length;
+        var count21to42km = distances.filter(d => d >= 21 && d < 42).length;
 
-    // Set the values in the right section
-    document.getElementById('total3to5km').innerText = count3to5km;
-    document.getElementById('total5to10km').innerText = count5to10km;
-    document.getElementById('total10to15km').innerText = count10to15km;
-    document.getElementById('total15to21km').innerText = count15to21km;
-    document.getElementById('total21to42km').innerText = count21to42km;
+        document.getElementById('total3to5km').innerText = count3to5km;
+        document.getElementById('total5to10km').innerText = count5to10km;
+        document.getElementById('total10to15km').innerText = count10to15km;
+        document.getElementById('total15to21km').innerText = count15to21km;
+        document.getElementById('total21to42km').innerText = count21to42km;
 
-    // Chart.js Setup
-    var ctx = document.getElementById('distanceChart').getContext('2d');
-    var distanceChart = new Chart(ctx, {
-        type: 'bar',
-        data: {
-            labels: ['>=3km and <5km', '>=5km and <10km', '>=10km and <15km', '>=15km and <21km', '>=21km and <42km'],
-            datasets: [{
-                label: 'Number of Runs',
-                data: [count3to5km, count5to10km, count10to15km, count15to21km, count21to42km],
-                backgroundColor: [
-                    '#ff6347', // >=3km and <5km
-                    '#ff9900', // >=5km and <10km
-                    '#ffcc00', // >=10km and <15km
-                    '#66cc33', // >=15km and <21km
-                    '#3399ff'  // >=21km and <42km
-                ],
-                borderColor: '#4d3227',
-                borderWidth: 2,
-                hoverBackgroundColor: '#ebc999',
-                hoverBorderColor: '#4d3227',
-                borderRadius: 10,
-                barThickness: 30,
-                hoverOffset: 10
-            }]
-        },
-        options: {
-            responsive: true,
-            maintainAspectRatio: false,
-            layout: {
-                padding: {
-                    left: 20,
-                    right: 20,
-                    top: 20,
-                    bottom: 20
-                }
+        var ctx = document.getElementById('distanceChart').getContext('2d');
+
+        function createGradient(ctx, color1, color2) {
+            let gradient = ctx.createLinearGradient(0, 0, 0, 400);
+            gradient.addColorStop(0, color1);
+            gradient.addColorStop(1, color2);
+            return gradient;
+        }
+
+        var distanceChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['>=3km & <5km', '>=5km & <10km', '>=10km & <15km', '>=15km & <21km', '>=21km & <42km'],
+                datasets: [{
+                    label: 'Runs Count',
+                    data: [count3to5km, count5to10km, count10to15km, count15to21km, count21to42km],
+                    backgroundColor: [
+                        createGradient(ctx, '#facc15', '#eab308'), // 3-5km
+                        createGradient(ctx, '#f43f5e', '#e11d48'), // 5-10km
+                        createGradient(ctx, '#6366f1', '#4f46e5'), // 10-15km
+                        createGradient(ctx, '#06b6d4', '#0891b2'), // 15-21km
+                        createGradient(ctx, '#10b981', '#047857')  // 21-42km
+                    ],
+                    borderWidth: 2,
+                    borderRadius: 8,
+                    barThickness: 40,
+                    hoverOffset: 10
+                }]
             },
-            scales: {
-                x: {
-                    title: {
-                        display: true,
-                        text: 'Distance Categories',
-                        color: '#ffffff',
-                        font: {
-                            size: 16
-                        }
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    x: {
+                        ticks: { color: '#e5e7eb', font: { size: 14 } }
                     },
-                    ticks: {
-                        font: {
-                            size: 14,
-                            family: 'Orbitron'
-                        },
-                        color: '#ffffff'
-                    },
+                    y: {
+                        beginAtZero: true,
+                        ticks: { color: '#e5e7eb', font: { size: 14 }, stepSize: 1 }
+                    }
                 },
-                y: {
-                    beginAtZero: true,
-                    title: {
-                        display: true,
-                        text: 'Number of Runs',
-                        color: '#ffffff',
-                        font: {
-                            size: 16
-                        }
-                    },
-                    ticks: {
-                        font: {
-                            size: 14,
-                            family: 'Orbitron'
-                        },
-                        color: '#ffffff',
-                        stepSize: 1
+                plugins: {
+                    legend: { display: false },
+                    tooltip: {
+                        backgroundColor: 'rgba(0, 0, 0, 0.8)',
+                        titleColor: '#facc15',
+                        bodyColor: '#fff',
+                        borderColor: '#facc15',
+                        borderWidth: 1
                     }
                 }
-            },
-            plugins: {
-                legend: {
-                    display: false
-                },
-                tooltip: {
-                    backgroundColor: 'rgba(0, 0, 0, 0.7)',
-                    titleColor: '#fff',
-                    bodyColor: '#fff',
-                    borderColor: '#4d3227',
-                    borderWidth: 2
-                }
             }
-        }
-    });
-</script>
+        });
+    </script>
+</body>

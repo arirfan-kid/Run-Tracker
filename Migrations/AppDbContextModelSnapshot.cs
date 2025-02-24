@@ -17,7 +17,7 @@ namespace SampleCrudApp.Migrations
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "9.0.1");
 
-            modelBuilder.Entity("SampleCrudApp.Models.RunTracker", b =>
+            modelBuilder.Entity("SampleCrudApp.Models.Item", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -27,6 +27,7 @@ namespace SampleCrudApp.Migrations
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Description")
+                        .HasMaxLength(500)
                         .HasColumnType("TEXT");
 
                     b.Property<double>("Length")
@@ -42,7 +43,7 @@ namespace SampleCrudApp.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("RunTracker");
+                    b.ToTable("Items", (string)null);
                 });
 #pragma warning restore 612, 618
         }

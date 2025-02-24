@@ -7,5 +7,6 @@ namespace SampleCrudApp.Models
     {
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) { }
         public DbSet<RunTracker> RunTracker { get; set; }
+        public DbSet<PlannedRun> PlannedRuns { get; set; }
     }
 }

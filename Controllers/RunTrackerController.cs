@@ -14,6 +14,7 @@ public class RunTrackerController : Controller
     public IActionResult Index()
     {
         var runs = _context.RunTracker.ToList(); 
+        ViewData["ShowHero"] = false;
         return View(runs); 
     }
 

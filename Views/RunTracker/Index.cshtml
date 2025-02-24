@@ -1,22 +1,23 @@
 @model IEnumerable<SampleCrudApp.Models.RunTracker>
 
 @{
-    ViewData["Title"] = "Run Tracker";
+    ViewData["Title"] = "Home Page";
 }
 
 <head>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron&family=Rubik:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron&family=Rubik:wght@400;700&display=swap"
+        rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
         body {
             font-family: 'Rubik', sans-serif;
-            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+            background: #0f172a;
             color: #e4e4e4;
         }
 
         .container {
             font-family: 'rubik', sans-serif;
-            margin-top: 50px;
+            margin-top: 10px;
             color: white !important;
         }
 
@@ -26,6 +27,20 @@
             color: #ebc999;
             text-shadow: 0px 4px 10px rgba(0, 0, 0, 0.7);
             margin-bottom: 30px;
+        }
+
+        .description-text {
+            color: #ebc999;
+            font-size: 18px;
+            text-align: center;
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 10px 20px;
+            font-weight: bold;
+            border-radius: 5px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.4);
+            width: fit-content;
+            margin: 0 auto 0px;
+            margin-top: 100px;
         }
 
         .btn-primary {
@@ -38,6 +53,7 @@
             border-radius: 5px;
             box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.4);
             transition: all 0.3s ease;
+            margin-top: -100px;
         }
 
         .btn-primary:hover {
@@ -47,9 +63,9 @@
         }
 
         .table-container {
-            max-height: 500px; 
-            overflow-y: auto; 
-            margin-top: 20px;
+            max-height: 500px;
+            overflow-y: auto;
+            margin-top: -10px;
         }
 
         .table {
@@ -111,10 +127,11 @@
         }
     </style>
 </head>
-
 <div class="container">
-    <h2>Run Tracker</h2>
-    <a class="btn btn-primary mb-3" href="@Url.Action("Create", "RunTracker")">Add New Run</a>
+    <p class="description-text">
+        If you've completed your run, log it here to track your history.
+    </p>
+    <a class="btn btn-primary mb-3" href="@Url.Action("Create", "RunTracker")">Add Your Past Run</a>
 
     <div class="table-container">
         <table class="table table-bordered table-striped">
@@ -138,8 +155,10 @@
                         <td>@run.Pace</td>
                         <td>@run.Description</td>
                         <td>
-                            <a class="btn btn-warning" href="@Url.Action("Edit", "RunTracker", new { id = run.Id })">Edit</a>
-                            <a class="btn btn-danger" href="@Url.Action("Delete", "RunTracker", new { id = run.Id })">Delete</a>
+                            <a class="btn btn-warning"
+                                href="@Url.Action("Edit", "RunTracker", new { id = run.Id })">Edit</a>
+                            <a class="btn btn-danger"
+                                href="@Url.Action("Delete", "RunTracker", new { id = run.Id })">Delete</a>
                         </td>
                     </tr>
                 }

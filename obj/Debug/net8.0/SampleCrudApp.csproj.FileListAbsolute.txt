@@ -1,13 +1,5 @@
 /Users/izzahanafiah/SampleCrudApp/bin/Debug/net8.0/appsettings.Development.json
 /Users/izzahanafiah/SampleCrudApp/bin/Debug/net8.0/appsettings.json
-/Users/izzahanafiah/SampleCrudApp/bin/Debug/net8.0/frontend/build/asset-manifest.json
-/Users/izzahanafiah/SampleCrudApp/bin/Debug/net8.0/frontend/build/manifest.json
-/Users/izzahanafiah/SampleCrudApp/bin/Debug/net8.0/frontend/new-app/package-lock.json
-/Users/izzahanafiah/SampleCrudApp/bin/Debug/net8.0/frontend/new-app/package.json
-/Users/izzahanafiah/SampleCrudApp/bin/Debug/net8.0/frontend/new-app/public/manifest.json
-/Users/izzahanafiah/SampleCrudApp/bin/Debug/net8.0/frontend/package-lock.json
-/Users/izzahanafiah/SampleCrudApp/bin/Debug/net8.0/frontend/package.json
-/Users/izzahanafiah/SampleCrudApp/bin/Debug/net8.0/frontend/public/manifest.json
 /Users/izzahanafiah/SampleCrudApp/bin/Debug/net8.0/SampleCrudApp.staticwebassets.runtime.json
 /Users/izzahanafiah/SampleCrudApp/bin/Debug/net8.0/SampleCrudApp
 /Users/izzahanafiah/SampleCrudApp/bin/Debug/net8.0/SampleCrudApp.deps.json
@@ -268,6 +260,7 @@
 /Users/izzahanafiah/SampleCrudApp/obj/Debug/net8.0/SampleCrudApp.MvcApplicationPartsAssemblyInfo.cache
 /Users/izzahanafiah/SampleCrudApp/obj/Debug/net8.0/SampleCrudApp.RazorAssemblyInfo.cache
 /Users/izzahanafiah/SampleCrudApp/obj/Debug/net8.0/SampleCrudApp.RazorAssemblyInfo.cs
+/Users/izzahanafiah/SampleCrudApp/obj/Debug/net8.0/SampleCrudApp.sourcelink.json
 /Users/izzahanafiah/SampleCrudApp/obj/Debug/net8.0/staticwebassets.build.json
 /Users/izzahanafiah/SampleCrudApp/obj/Debug/net8.0/staticwebassets.development.json
 /Users/izzahanafiah/SampleCrudApp/obj/Debug/net8.0/staticwebassets/msbuild.SampleCrudApp.Microsoft.AspNetCore.StaticWebAssets.props
@@ -275,13 +268,12 @@
 /Users/izzahanafiah/SampleCrudApp/obj/Debug/net8.0/staticwebassets/msbuild.buildMultiTargeting.SampleCrudApp.props
 /Users/izzahanafiah/SampleCrudApp/obj/Debug/net8.0/staticwebassets/msbuild.buildTransitive.SampleCrudApp.props
 /Users/izzahanafiah/SampleCrudApp/obj/Debug/net8.0/staticwebassets.pack.json
-/Users/izzahanafiah/SampleCrudApp/obj/Debug/net8.0/scopedcss/Views/Shared/_Layout.cshtml.rz.scp.css
 /Users/izzahanafiah/SampleCrudApp/obj/Debug/net8.0/scopedcss/bundle/SampleCrudApp.styles.css
-/Users/izzahanafiah/SampleCrudApp/obj/Debug/net8.0/scopedcss/projectbundle/SampleCrudApp.bundle.scp.css
 /Users/izzahanafiah/SampleCrudApp/obj/Debug/net8.0/SampleCr.8DDA713E.Up2Date
 /Users/izzahanafiah/SampleCrudApp/obj/Debug/net8.0/SampleCrudApp.dll
 /Users/izzahanafiah/SampleCrudApp/obj/Debug/net8.0/refint/SampleCrudApp.dll
 /Users/izzahanafiah/SampleCrudApp/obj/Debug/net8.0/SampleCrudApp.pdb
 /Users/izzahanafiah/SampleCrudApp/obj/Debug/net8.0/SampleCrudApp.genruntimeconfig.cache
 /Users/izzahanafiah/SampleCrudApp/obj/Debug/net8.0/ref/SampleCrudApp.dll
-/Users/izzahanafiah/SampleCrudApp/obj/Debug/net8.0/SampleCrudApp.sourcelink.json
+/Users/izzahanafiah/SampleCrudApp/bin/Debug/net8.0/package-lock.json
+/Users/izzahanafiah/SampleCrudApp/bin/Debug/net8.0/package.json

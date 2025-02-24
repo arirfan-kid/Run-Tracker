@@ -1,10 +1,6 @@
 {
   "Files": [
     {
-      "Id": "/Users/izzahanafiah/SampleCrudApp/obj/Debug/net8.0/scopedcss/projectbundle/SampleCrudApp.bundle.scp.css",
-      "PackagePath": "staticwebassets/SampleCrudApp.bundle.scp.css"
-    },
-    {
       "Id": "/Users/izzahanafiah/SampleCrudApp/wwwroot/css/site.css",
       "PackagePath": "staticwebassets/css/site.css"
     },

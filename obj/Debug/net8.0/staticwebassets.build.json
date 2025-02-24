@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "mrpXRDwV/6VUtarB90QYVG/wmtDWfi0ePP2/cJiA9no=",
+  "Hash": "UeN9ad1ftdrz7s4DqdyeLypSluWDb6BQaGhFhItFX5g=",
   "Source": "SampleCrudApp",
   "BasePath": "_content/SampleCrudApp",
   "Mode": "Default",
@@ -16,44 +16,6 @@
     }
   ],
   "Assets": [
-    {
-      "Identity": "/Users/izzahanafiah/SampleCrudApp/obj/Debug/net8.0/scopedcss/bundle/SampleCrudApp.styles.css",
-      "SourceId": "SampleCrudApp",
-      "SourceType": "Computed",
-      "ContentRoot": "/Users/izzahanafiah/SampleCrudApp/obj/Debug/net8.0/scopedcss/bundle/",
-      "BasePath": "_content/SampleCrudApp",
-      "RelativePath": "SampleCrudApp.styles.css",
-      "AssetKind": "All",
-      "AssetMode": "CurrentProject",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "ScopedCss",
-      "AssetTraitValue": "ApplicationBundle",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "/Users/izzahanafiah/SampleCrudApp/obj/Debug/net8.0/scopedcss/bundle/SampleCrudApp.styles.css"
-    },
-    {
-      "Identity": "/Users/izzahanafiah/SampleCrudApp/obj/Debug/net8.0/scopedcss/projectbundle/SampleCrudApp.bundle.scp.css",
-      "SourceId": "SampleCrudApp",
-      "SourceType": "Computed",
-      "ContentRoot": "/Users/izzahanafiah/SampleCrudApp/obj/Debug/net8.0/scopedcss/projectbundle/",
-      "BasePath": "_content/SampleCrudApp",
-      "RelativePath": "SampleCrudApp.bundle.scp.css",
-      "AssetKind": "All",
-      "AssetMode": "Reference",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "ScopedCss",
-      "AssetTraitValue": "ProjectBundle",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "/Users/izzahanafiah/SampleCrudApp/obj/Debug/net8.0/scopedcss/projectbundle/SampleCrudApp.bundle.scp.css"
-    },
     {
       "Identity": "/Users/izzahanafiah/SampleCrudApp/wwwroot/css/site.css",
       "SourceId": "SampleCrudApp",
