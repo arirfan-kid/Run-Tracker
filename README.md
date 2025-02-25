@@ -57,7 +57,7 @@ After this command, the project will be downloaded into a folder with the same n
 
 5. Run the Project
     A. Run the Project
-       - To run the application, click on Run > Start Debugging (or press F5 or command dotnet watch run).
+       - To run the application, click on Run > Start Debugging (or press F5 or command "dotnet watch run".
        - This will launch the application in your default browser or the configured environment.
 
 
