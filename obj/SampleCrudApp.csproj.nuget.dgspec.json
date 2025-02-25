@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/izzahanafiah/SampleCrudApp/Run-Tracker/Run-Tracker/SampleCrudApp.csproj": {}
+    "/Users/izzahanafiah/SampleCrudApp/Run-Tracker/Run-Tracker/Run-Tracker/SampleCrudApp.csproj": {}
   },
   "projects": {
-    "/Users/izzahanafiah/SampleCrudApp/Run-Tracker/Run-Tracker/SampleCrudApp.csproj": {
+    "/Users/izzahanafiah/SampleCrudApp/Run-Tracker/Run-Tracker/Run-Tracker/SampleCrudApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/izzahanafiah/SampleCrudApp/Run-Tracker/Run-Tracker/SampleCrudApp.csproj",
+        "projectUniqueName": "/Users/izzahanafiah/SampleCrudApp/Run-Tracker/Run-Tracker/Run-Tracker/SampleCrudApp.csproj",
         "projectName": "SampleCrudApp",
-        "projectPath": "/Users/izzahanafiah/SampleCrudApp/Run-Tracker/Run-Tracker/SampleCrudApp.csproj",
+        "projectPath": "/Users/izzahanafiah/SampleCrudApp/Run-Tracker/Run-Tracker/Run-Tracker/SampleCrudApp.csproj",
         "packagesPath": "/Users/izzahanafiah/.nuget/packages/",
-        "outputPath": "/Users/izzahanafiah/SampleCrudApp/Run-Tracker/Run-Tracker/obj/",
+        "outputPath": "/Users/izzahanafiah/SampleCrudApp/Run-Tracker/Run-Tracker/Run-Tracker/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/izzahanafiah/.nuget/NuGet/NuGet.Config"
